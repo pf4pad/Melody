@@ -63,3 +63,10 @@ a{
   font-size: 17px;
   line-height: 20px;
 }
+
+
+.main{
+  max-width: 1280px;
+  margin: auto;
+  padding: 54px 0 10px 0;
+}
