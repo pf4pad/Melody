@@ -3,9 +3,10 @@ $(document).ready(function () {
   var counterUp = $(".counter-up");
   var counterDown = $(".counter-down");
   var floorPath = $(".home-image path");
-  var currentZero = $("body");
-
-
+  var modal = $(".modal");
+  var modalCloseButton = $(".modal-close-button");
+  var modal = $(".modal");
+  var modalButtonPrimary = $(".button-primary");
 
   floorPath.on("mouseover", function () {
     floorPath.removeClass("current-floor");
@@ -15,8 +16,11 @@ $(document).ready(function () {
   });
 
 
+  floorPath.on('click', toggleModal);
 
+  modalCloseButton.on('click', toggleModal);
 
+  modalButtonPrimary.on('click', toggleModal);
 
   counterUp.on("click", function () {
     if (currentFloor < 18) {
@@ -47,10 +51,6 @@ $(document).ready(function () {
     }
   });
 
-
-
-
-
   var intervalUp;
   counterUp.mousedown(function () {
     intervalUp = setInterval(do_Up, 150);
@@ -60,6 +60,7 @@ $(document).ready(function () {
     //this should help solve the problem that occurs when the mouse leaves the button while pressed down
     clearInterval(intervalUp);
   });
+
 
   function do_Up() {
     // whatever
@@ -99,10 +100,11 @@ $(document).ready(function () {
       $(`[data-floor=${usCurrentFloor}]`).toggleClass("current-floor");
     }
 
+  };
+
+  function toggleModal() { // открыть закрыть окно
+    modal.toggleClass("is-open");
   }
-
-
-
 })
 
 
