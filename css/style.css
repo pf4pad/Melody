@@ -251,6 +251,13 @@ path.current-floor{
   right: 27px;
   background-color: #fff;
 }
+
+.flats{
+  background-image: url('../img/floor.png') ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover 
+}
 .flats path {
   opacity: 0;
   cursor: pointer;
